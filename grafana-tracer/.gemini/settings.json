@@ -1,0 +1,39 @@
+{
+    "theme": "Dracula",
+    "selectedAuthType": "gemini-api-key",
+    "preferredEditor": "vscode",
+    "mcpServers": {
+        "playwright": {
+            "type": "stdio",
+            "command": "npx",
+            "args": [
+                "@playwright/mcp@latest"
+            ],
+            "gallery": true
+        },
+        "brainstormWithExperts": {
+            "type": "http",
+            "httpUrl": "http://localhost:8976/mcp/"
+        },
+        "grafana": {
+            "command": "docker",
+            "args": [
+                "run",
+                "--rm",
+                "-i",
+                "-e",
+                "GRAFANA_URL",
+                "-e",
+                "GRAFANA_API_KEY",
+                "mcp/grafana",
+                "-t",
+                "stdio",
+                "-debug"
+            ],
+            "env": {
+                "GRAFANA_URL": "http://localhost:3000",
+                "GRAFANA_API_KEY": "your_grafana_api_key"
+            }
+        }
+    }
+}

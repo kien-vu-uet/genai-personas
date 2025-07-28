@@ -2,6 +2,7 @@
     "theme": "Dracula",
     "selectedAuthType": "gemini-api-key",
     "preferredEditor": "vscode",
+    "maxSessionTurns": 15,
     "mcpServers": {
         "playwright": {
             "type": "stdio",
@@ -31,8 +32,8 @@
                 "-debug"
             ],
             "env": {
-                "GRAFANA_URL": "http://localhost:3000",
-                "GRAFANA_API_KEY": "your_grafana_api_key"
+                "GRAFANA_URL": "${GRAFANA_URL}",
+                "GRAFANA_API_KEY": "${GRAFANA_API_KEY}"
             }
         }
     }
